@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js"></script>
+    <title>TEST</title>
+</head>
+<body>
+    <div class="buttons-container">
+        <button class="open-cart-btn" onclick="openCart();">
+            <div id="cartBtnText">Deschide coș</div>
+            <div id="cartBtnSeparator" class="open-cart-btn-text-separator"></div>
+            <div id="cartBtnArrowQty" class="cart-btn-arrow-qty-container">
+                <div id="cartBtnQty" class="cart-btn-qty"></div>
+                <div class="cart-btn-qty-info-hide"></div>
+            </div>
+        </button>
+        <button class="load-prods-btn" onclick="addToCart();">Incarcă produse</button>
+    </div>
+    <div class="popup-container">
+        <div>
+            <div onclick="closeCart()" id="cartOverlay" class="overlay-hide"></div>
+            <div id="myCart" class="cart-container" style="transform: translateX(430px);">
+                <button class="close-btn" style="display: none" onclick="closeCart(); removeFromCart();">
+                </button>
+                <div class="cart-body">
+                    <div id="empty" class="empty-cart"></div>
+                    <div id="notEmpty" class="cart">
+                        <div class="cart-title">
+                            <h1 class="cart-title-info"></h1>
+                        </div>
+                        
+                        <div id="product"></div>
+
+                        <div class="recommended-container">
+                            <div class="recommended-info">
+                                <h1 class="recommended-title">Îți recomandăm să încerci</h1>
+                                <div class="recomended-products-container">
+                                    <div class="recommended-slider-container">
+                                        <button class="recommended-slider-btn">
+                                            <div class="recommended-bg">
+                                                <h3 class="recommended-slider-btn-title">Sosuri</h3>
+                                            </div>
+                                        </button>
+                                        <div id="recommendedSlider" class="recommended-slider"></div>
+                                    </div>
+                                    <i id="leftSlide" class="recommended-slider-left"></i>
+                                    <i id="rightSlide" class="recommended-slider-right"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cart-footer">
+                            <div class="promo-info-container">
+                                <label class="promo-info-label">
+                                    <span class="label"></span>
+                                    <div class="promo-input-container">
+                                        <input id="inputPromo" class="promo-input" placeholder="Promocod">
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="cart-price-info-container">
+                                <div class="cart-price-info">
+                                    <div class="cart-subtotal">
+                                        <div class="cart-subtotal-info">
+                                            <span id="productsInCart"></span>
+                                            <span id="productsInCartSubtotal"></span>
+                                        </div>
+                                        <div class="cart-subtotal-info">
+                                            <span class="cart-subtotal-info-dodo-span">
+                                                <div>Încărcați Dodocoins</div>
+                                                <button id="dodoCoinsTooltipBtn" class="dodo-coins-tooltip-btn"></button>
+                                                <div class="dodo-coins-info-container">
+                                                    <div class="dodo-coins-tooltip-container">
+                                                        <div id="dodoCoinsTooltip" class="dodo-coins-tooltip">
+                                                            <div class="tooltip-base-content">
+                                                                <i class="dodo-tooltip-pointer"></i>
+                                                                <div class="dodo-tooltip-text">
+                                                                    Dodocoins - monedă care poate fi cheltuită pe cadouri în aplicație
+                                                                </div>
+                                                            </div> 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </span>
+                                            <div style="display:flex; gap:5px;">
+                                                <span id="dodoCoins"></span>
+                                                <span class="dodo-coins"></span> 
+                                            </div>
+                                        </div>
+                                        <div class="cart-subtotal-info">
+                                            <span class="cart-subtotal-info-delivery-span">
+                                                <div>Livrare</div>
+                                                <button id="deliveryTooltipBtn" class="cart-delivery-tooltip-btn"></button>
+                                                <div class="cart-delivery-info-container">
+                                                    <div class="cart-delivery-tooltip-container">
+                                                        <div id="deliveryTooltip" class="cart-delivery-tooltip">
+                                                            <div class="delivery-tooltip-base-content">
+                                                                <i class="delivery-tooltip-pointer"></i>
+                                                                <div class="delivery-tooltip-text">
+                                                                    Această taxă ne ajută să livrăm produsele noastre calde și gustoase super rapid
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </span>
+                                            <span id="cartDeliveryPrice" class="cart-delivery-price-info">
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="cart-total">
+                                        <span>Total</span>
+                                        <span id="totalCart"></span>
+                                    </div>
+                                    <button class="cart-checkout-btn">Spre plată</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
